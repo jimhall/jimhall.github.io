@@ -1,0 +1,54 @@
+<!-- Begin code @ _includes/head.html -->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
+
+<!-- Begin code from https://realfavicongenerator.net -->
+<!-- Source file in /assets/images/favicon/jh-favico.svg -->
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ '/assets/images/favicon/apple-touch-icon.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/assets/images/favicon/favicon-32x32.png' | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/assets/images/favicon/favicon-16x16.png' | relative_url }}">
+  <link rel="manifest" href="{{ '/assets/images/favicon/site.webmanifest' | relative_url }}">
+  <link rel="mask-icon" href="{{ '/assets/images/favicon/safari-pinned-tab.svg' | relative_url }}" color="#5bbad5">
+  <link rel="shortcut icon" href="{{ 'favicon.ico' | relative_url }}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="msapplication-config" content="{{ '/assets/images/favicon/browserconfig.xml' | relative_url }}">
+  <meta name="theme-color" content="#ffffff">
+<!-- End code from https://realfavicongenerator.net -->
+<!-- tags added based on https://css-tricks.com/essential-meta-tags-social-media/ -->
+<!-- <meta property="og:image" content="{{ '/apple-touch-icon.png' | relative_url }}"> -->
+  <meta property="og:image" content="https://jimhall.github.io/assets/images/favicon/apple-touch-icon.png">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:image" content="{{ page.image | default: "https://jimhall.github.io/assets/images/favicon/apple-touch-icon.png" }}">
+  <meta name="twitter:image:alt" content="Jim Hall's Blog">
+  <meta name="twitter:site" content="@jimhall37">
+  <link href="{{ '/feed.xml'| relative_url }}" type="application/atom+xml" rel="alternate" title="{{ site.title }}"/>
+<!-- See https://github.com/jekyll/jekyll-feed#meta-tags -->
+{% feed_meta %}
+{% seo %}
+
+<!-- See https://desiredpersona.com/google-analytics-jekyll/
+     Determined from this post that google analytics script should be 
+     in <head> -->
+
+<!-- Begin code for google analytics -->
+
+    {% if site.google_analytics %}
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', '{{ site.google_analytics }}', 'auto');
+        ga('send', 'pageview');
+      </script>
+    {% endif %}
+
+    <!-- End code for google analytics -->
+
+</head>
+
+<!-- End code @ _includes/head.html -->

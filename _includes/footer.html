@@ -1,0 +1,31 @@
+<!-- Begin code @ _includes/footer.html -->
+
+<!-- https://www.w3schools.com/css/css_howto.asp -->
+<!-- See _sass/_default_colors.scss for $conifer -->
+
+    <footer> 
+    <div class="footer">
+
+    <div class="social-links">
+        <ul class="social-media-list">
+        <li><a rel="me" href="{{ site.github.repository_url }}" title="Jim Hall Hacker Source">
+        <svg class="svg-footicon green">
+        <use xlink:href="{{ '/assets/images/minima-social-icons.svg#github' | relative_url }}"></use>
+        </svg></a></li>
+        <li><a rel="me" href="https://twitter.com/intent/tweet?screen_name=jimhall37&ref_src=twsrc%5Etfw" title="@jimhall37">
+        <svg class="svg-footicon green">
+        <use xlink:href="{{ '/assets/images/minima-social-icons.svg#twitter' | relative_url }}"></use>
+        </svg></a></li></ul>
+    </div>
+  </div>
+
+  <!-- BEGIN OLD CODE -->
+      <div class="footer"> 
+        <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+          <h2>{{ site.author}} {% capture currentyear %}{{ 'now' | date: "%Y" }}{% endcapture %} © {{ currentyear }}</h2>
+        </a>
+     </div>
+    <!-- END OLD COLD-->
+     </footer>
+
+      <!-- End code @ _includes/footer.html -->

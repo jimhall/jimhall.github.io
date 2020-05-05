@@ -1,0 +1,31 @@
+<!-- Begin code @ _includes/header.html -->
+
+  <header>
+    <div class="container">
+      <a id="a-title" href="{{ '/' | relative_url }}">
+         <h1>{{ site.title | default: site.github.repository_name }}</h1>
+      </a>
+      <h2>{{ site.description | default: site.github.project_tagline }}</h2>
+    </div>
+
+    <!-- See: https://css-tricks.com/forums/topic/h1-and-h2-tags-on-same-line/ -->
+
+    <div class="container">
+      <a href="{{ '/archive' | relative_url }}"><h2 style="display:inline;">Archive</h2></a>
+      <a href="{{ '/about' | relative_url }}"><h2 style="display:inline;">About</h2></a>
+      <a href="{{ '/categories' | relative_url }}"><h2 style="display:inline;">Categories</h2></a>
+      <a href="{{ '/tags' | relative_url }}"><h2 style="display:inline;">Tags</h2></a>
+      <!-- <a href="{{ '/atom.xml' | relative_url }}"> -->
+      <a href="{{ '/feed.xml' | relative_url }}">
+      <!-- Stolen style and icon from minima See: https://github.com/jekyll/minima -->
+      <h2 style="display:inline;">
+      <svg class="svg-icon orange">
+        <use xlink:href="{{ '/assets/images/minima-social-icons.svg#rss' | relative_url }}">
+        </use>
+      </svg>Subscribe
+      </h2>
+      </a>
+    </div>
+  </header>
+
+  <!-- End code @ _includes/header.html -->
