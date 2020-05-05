@@ -1,0 +1,45 @@
+---
+layout: default
+---
+
+<small>{{ page.date | date: "%-d %B %Y" }}</small>
+<h1>{{ page.title }}</h1>
+
+<p class="view">by {{ page.author | default: site.author }}</p>
+
+{{content}}
+
+<!-- Please see: 
+     https://stackoverflow.com/questions/34568011/add-an-element-on-the-last-jekyll-loop-of-posts
+     Regarding the use of forloop.last 
+     
+     Please see:
+     https://stackoverflow.com/questions/52250168/url-string-interpolation-with-liquid-tags-jekyl
+     Regarding the prepend concept to muck with URLs-->
+
+<div>
+{% if page.categories %}
+<small>categories:
+{% for categories in page.categories %}
+  {% if forloop.last == false %}
+    <em><a href="{{ categories | prepend: 'categories/' | relative_url }}">{{ categories }}</a></em> -
+  {% else %}
+    <em><a href="{{ categories | prepend: 'categories/' | relative_url }}">{{ categories }}</a></em> 
+  {% endif %}
+{% endfor %}
+{% endif %}
+</small>
+</div>
+<div>
+{% if page.tags %}
+<small>tags:
+{% for tags in page.tags %}
+  {% if forloop.last == false %}
+    <em><a href="{{ tags | prepend: 'tags/' | relative_url }}">{{ tags }}</a></em> -
+  {% else %}
+    <em><a href="{{ tags | prepend: 'tags/' | relative_url }}">{{ tags }}</a></em> 
+  {% endif %}
+{% endfor %}
+{% endif %}
+</small>
+</div>

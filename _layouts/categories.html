@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: "en-US" }}">
+
+{% include head.html %}
+
+  <body>
+
+    {% include header.html %} 
+    
+<!-- Begin code @ categories/?/index.md -->
+<div class="container">
+  <section id="main_content">
+<h1>{{ page.title }}</h1>
+
+<div class="tagcloud">
+
+{% capture title %}{{ page.title }}{% endcapture %}
+
+{%- for categories in site.categories -%}
+  {%- if categories[0] == title -%}
+  <ul>
+    {%- for post in categories[1] -%}
+      <li><a href="{{ post.url| relative_url }}">{{ post.title }}</a></li>
+      <time>{{ post.date | date: "%e %B %Y" }}</time>
+      {{ post.excerpt }}
+    {% endfor %}
+  </ul>
+  {% endif %}
+{%- endfor -%}
+</div>
+  </section>
+</div>
+
+<!-- End code @ categories/?/index.md -->
+
+    {% include footer.html %}
+
+  </body>
+</html>
