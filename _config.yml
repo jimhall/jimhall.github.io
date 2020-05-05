@@ -1,0 +1,14 @@
+title: 'jimhall.sh | grep "interesting things"'
+description: At least to me. Mostly tech / computing
+author: Jim Hall
+email: jimhallsun@gmail.com
+show_downloads: true
+google_analytics: 'UA-165283545-1'
+#theme: jekyll-theme-hacker # The theme that comes with gh pages
+remote_theme: pages-themes/hacker
+show_excerpts: true # set to false to remove excerpts on the homepage
+# https://dzhavat.github.io/2020/01/19/adding-an-rss-feed-to-github-pages.html
+# https://github.com/jekyll/jekyll-feed/releases
+# https://pages.github.com/versions/
+plugins:
+  - jekyll-feed
