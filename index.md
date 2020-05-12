@@ -7,12 +7,10 @@ title: Welcome to my blog
 
 # Welcome to my blog
 
-I'm glad you are here. I plan to talk about ...
+I'm glad you are here. Thanks for stopping by!
 
-stuff
-
-This is the second pathetic attempt to add content and figure out how Jekyll
-works.
+Send constructive points or constructive criticism by clicking the social links in the
+footer. 
 
 <ul>
 {% for post in site.posts %}
