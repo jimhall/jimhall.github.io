@@ -1,0 +1,69 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on:
+  push:
+    branches: [ master ]
+    paths:
+    - '_posts/**'
+  # pull_request:
+  #  branches: [ master ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.7]
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    #https://help.github.com/en/actions/language-and-framework-guides/using-python-with-github-actions#specifying-a-python-version
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Display Python version
+      run: python -c "import sys; print(sys.version)"
+
+    #    print(os.listdir(.))
+    # Runs a set of commands using the runners shell
+    - name: Run python script to create categories dir/index.md
+      run: |
+        sleep 5
+        echo execute scripts/test.py -c
+        python scripts/test.py -c
+        #cat /tmp/newcatortag.txt
+        export NEWCAT=`cat /tmp/newcatortag.txt`
+        echo "::set-env name=NEWCAT::$NEWCAT"
+
+    # Runs a set of commands using the runners shell
+    - name: Run python script to create tags dir/index.md
+      run: |
+        echo execute scripts/test.py -t
+        python scripts/test.py -t
+        export NEWTAG=`cat /tmp/newcatortag.txt`
+        echo "::set-env name=NEWTAG::$NEWTAG"
+
+    # https://stackoverflow.com/questions/57921401/push-to-origin-from-github-action
+    - name: Commit changes to tags/cats
+      run: |
+          echo "NEWCAT: $NEWCAT NEWTAG: $NEWTAG"
+          if [ $NEWCAT == 1 -o $NEWTAG == 1 ]; then
+            git config --global user.name 'jimhall'
+            git config --global user.email 'jimhallsun@gmail.com'
+            git add .
+            git commit -am "Automated creation of tags and categories pages"
+            git push
+          else
+            echo "NO GIT CMDS BECAUSE NO NEW CATS OR TAGS CREATED"
+          fi
+
