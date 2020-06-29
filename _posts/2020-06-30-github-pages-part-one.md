@@ -13,6 +13,7 @@ be about how I created this blog. I found creating this site to be
 a trivial activity, but as with a lot of things in life, the first
 80% was the easy part.
 
+
 <!--more-->
 
 The last 20% then turned into consumption of a lot of "spare time"
