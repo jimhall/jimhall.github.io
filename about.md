@@ -17,7 +17,7 @@ Typically I have had the following roles / jobs:
 
 I have interests in the following:
 
-- Hardware / Operating Systems / Databases
+- Hardware / Operating Systems (UNIX/Linux) / Databases
 - Distributed Systems
 - Cloud Computing
 - Reliability / Resiliency
