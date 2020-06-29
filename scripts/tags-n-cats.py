@@ -42,7 +42,7 @@ def missing_dirs(typedir):
 
 #https://realpython.com/python-command-line-arguments/
 opts = [opt for opt in sys.argv[1:] if opt.startswith("-")]
-baseurl = 'https://jimhall.github.io/TestBlog4/'
+baseurl = 'https://jimhall.github.io/'
 encoding = 'utf-8'
 catindexmd = '''---
 layout: categories
