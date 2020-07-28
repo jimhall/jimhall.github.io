@@ -44,8 +44,10 @@ command](https://globedrill.com/how-to-start-stop-restart-ssh-service-on-centos-
 using `systemctl restart sshd.service` and go figure X displaying applications
 to my Mac work now. 
 
-This seems to be an unfortunate side effect of trying to maintain
-configuration file stability with a baseline release of an operating system.
-The bug seems to have been fixed with OpenSSH 5.3 and even though this
-specific system is patched and now running OpenSSH 7.4, I still had to tweak
-the `/usr/ssh/sshd_config` file.
+What seems strange to me is that this bug seems to have been filed and fixed
+with OpenSSH 5.3 and identified as an issue in RH 6 back in 2014. I am running
+an equivalent to RH 7 and OpenSSH 7.4, but the `AddressFamily any` is still
+the default in `/usr/ssh/sshd_config` file and *still* breaks X displaying applications. 
+
+My Linux-fu is too weak to sort out when `AddressFamily any` does not break X
+displaying applications.
