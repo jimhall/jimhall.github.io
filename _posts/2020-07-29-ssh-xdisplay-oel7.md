@@ -3,7 +3,7 @@ layout: post
 title: "SSH X Display Issue With OEL 7"
 date: 2020-07-29
 categories: [computing]
-tags: [linux, OEL, SSH, X]
+tags: [linux, oel, ssh, x11]
 image: "https://news-cdn.softpedia.com/images/news2/oracle-enterprise-linux-7-5-debuts-with-unbreakable-enterprise-kernel-release-4-520750-2.jpg"
 excerpt_separator: <!--more-->
 ---
@@ -50,4 +50,6 @@ an equivalent to RH 7 and OpenSSH 7.4, but the `AddressFamily any` is still
 the default in `/usr/ssh/sshd_config` file and *still* breaks X displaying applications. 
 
 My Linux-fu is too weak to sort out when `AddressFamily any` does not break X
-displaying applications.
+displaying applications. Although I do not appear to be alone as to asking [why
+this is still
+broken](https://unix.stackexchange.com/questions/470905/why-addressfamily-needs-to-be-configured-for-x11-forwarding).
