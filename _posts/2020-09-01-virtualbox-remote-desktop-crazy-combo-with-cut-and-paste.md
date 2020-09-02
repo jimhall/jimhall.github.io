@@ -107,7 +107,7 @@ Paste](https://jimhall.github.io/assets/images/cutnpaste.png)
   from the Apple App Store
 - Lauch the app
 - Click the "+" and choose Add a PC
-- Add a PC name (in my case the <IP address>:<service number> of the Windows 10 host:
+- Add a PC name (in my case the IP address:service number of the Windows 10 host:
   10.0.0.182). 3389 is the default RDP client service number, so only the IP
   address is required. If you have multiple guests give them a unique service
   number and then enter 10.0.0.182:3390 for example)
