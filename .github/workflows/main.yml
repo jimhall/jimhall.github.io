@@ -62,7 +62,7 @@ jobs:
     # Runs a set of commands using the runners shell
     - name: Run python script to create categories dir/index.md
       run: |
-        sleep 5
+        sleep 60
         echo execute scripts/tags-n-cats.py -c
         python scripts/tags-n-cats.py -c
         #cat /tmp/newcatortag.txt

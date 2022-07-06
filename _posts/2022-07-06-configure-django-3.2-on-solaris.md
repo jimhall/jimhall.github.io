@@ -10,7 +10,7 @@ excerpt_separator: <!--more-->
 
 Trying to leverage what is bundled in Solaris 11.4, so I tried to configure
 the latest version of Django. Simultaneously picked up some tricks on how to
-manage packages on Solaris.
+manage packages on Solaris. 
 
 <!--more-->
 
